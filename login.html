@@ -5,10 +5,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
+ 
   
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
   <style>
     body {
       background-color: rgb(248, 249, 250);
@@ -18,17 +20,41 @@
 
 <body>
   <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="ctn">
+        <form>
+        <img src="/img/login.png" alt="baner e-commerce">
+        <h1>Inicio De Sesión</h1>
+          <label for="email">Email</label>
+          <input name="user" id="email" type="email" placeholder="Ingrese Su Correo"> <svg class=img_svg width="24px" height="24px" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" fill="#DC3545"><path d='M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-13a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1zm0 10a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/></svg>
+
+          <p class="error_email"></p>
+          <label for="password">Contraseña</label>
+          <input name="password" value= "" id="password" type="password" placeholder="Ingrese su contraseña" >
+            <svg id=img_svg width="24px" height="24px" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" fill="#DC3545"><path d='M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-13a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1zm0 10a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/></svg>
+          
+
+          <p class="error_password"></p>
+          <button>Ingresar</button>
+          <div
+            id="g_id_onload"
+            data-client_id="268598166526-9tmto0tkj0uvb5n74njs3kau9h7makjq.apps.googleusercontent.com"
+            data-callback="response"
+            data-login_uri="https://facundopereira.github.io/login.html"
+          ></div>
+          <script src="https://accounts.google.com/gsi/client" async defer></script>
+          <div class="g_id_signin" data-type="standard"></div>
+        </form>
+
       </div>
-    </div>
   </main>
+  <script>
+    window.response = (response) => {
+      console.log(response)
+      window.location.href = "index.html";
+    }
+  </script>
   <footer class="text-muted">
     <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
         2022</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
