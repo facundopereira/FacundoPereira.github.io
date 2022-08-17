@@ -28,7 +28,7 @@ form_element.addEventListener("submit", function(event){
         svg_error2.style.visibility="visible";
     }
     else if(email_input.value.length>=10 && password_input.value.length>=8){
-        window.location.href = "index.html";
+        window.location.href = "coverpage.html";
     }
     else if(password_input.value.length<=7){
         error_password.innerHTML="Contraseña incorrecta";
