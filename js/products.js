@@ -23,24 +23,7 @@ fetch(PRODUCT_AUTO)
             </div>
         </div> ` 
     }
-/*     for (product of data.products){
-        //console.log(data.products[4].name)
-        auto_products.innerHTML += 
-        `<div class="products_container">
-            <div class="content">
-                <div class="product_image">
-                    <img src="${product.image}">
-                </div>
-                <div class="product_description">
-                    <div class="product_name">
-                        <h4>${product.name} - ${product.currency} ${product.cost}</h4>
-                        <small>${product.soldCount} vendidos</small>
-                    </div>
-                    <p>${product.description}</p>
-                </div>
-            </div>
-        </div> ` 
-    } */
+    
     let name_category= document.getElementById("description") 
     name_category.innerHTML= `Verás aquí todos los elementos de la categoría ${data.catName} `   
     })

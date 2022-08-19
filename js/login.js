@@ -5,13 +5,24 @@ const error_email = document.querySelector(".error_email")
 const error_password = document.querySelector(".error_password")
 const svg_error = document.querySelector(".img_svg")
 const svg_error2 = document.querySelector("#img_svg")
+const URL_actual = window.location.hostname;
+
+console.log(URL_actual);
+ if(URL_actual==="127.0.0.1"){
+     window.location.href = "http://localhost:5500/index.html"
+ }
+
+ window.response = (response) => {
+    console.log(response)
+    window.location.href = "coverpage.html";
+  }
 
 
 form_element.addEventListener("submit", function(event){
     event.preventDefault();
     if(email_input.value.length===0){
         console.log("email invalide");
-        email_input.style.border="0.5px solid red";
+        email_input.style.border="0.5px solid red"; 
         error_email.innerHTML="Ingresa tu E-mail";
         error_email.style.color="red";
         svg_error.style.visibility="visible"; 

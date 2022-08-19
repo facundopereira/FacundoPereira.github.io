@@ -7,7 +7,7 @@
     text-align: center;
     
   }
-  
+
   .ctn form{
   display: flex;
   flex-direction: column;
@@ -77,4 +77,5 @@
 
   .g_id_signin{
    translate: 90px -0px ;
+   width: 226px;
   }

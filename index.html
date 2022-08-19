@@ -21,7 +21,7 @@
 <body>
   <main class="mt-5">
     <div class="ctn">
-        <form>
+      <form id="form_login">
         <img src="/img/login.png" alt="baner e-commerce">
         <h1>Inicio De Sesión</h1>
           <label for="email">Email</label>
@@ -35,24 +35,19 @@
 
           <p class="error_password"></p>
           <button>Ingresar</button>
+          <hr>
           <div
             id="g_id_onload"
             data-client_id="268598166526-9tmto0tkj0uvb5n74njs3kau9h7makjq.apps.googleusercontent.com"
             data-callback="response"
             data-login_uri="https://facundopereira.github.io/login.html"
           ></div>
-          <script src="https://accounts.google.com/gsi/client" async defer></script>
           <div class="g_id_signin" data-type="standard"></div>
         </form>
 
       </div>
   </main>
-  <script>
-    window.response = (response) => {
-      console.log(response)
-      window.location.href = "coverpage.html";
-    }
-  </script>
+
   <footer class="text-muted">
     <div class="container">
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
@@ -61,6 +56,7 @@
     </div>
   </footer>
   <script src="js/login.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>
 
 </html>
