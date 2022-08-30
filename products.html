@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="coverpage.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -32,6 +32,7 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <span class="nav-link" id="email_storage"></span>
           </li>
         </ul>
       </div>
@@ -41,6 +42,29 @@
     <div class="container_title">
       <h1>Productos</h1>
       <p id="description"></p>
+    </div>
+    <div class="container_filter">
+      <div class="search"> 
+        <label for="search"><i class="fa fa-solid fa-search"></i></label>
+        <input id= "search" value="" type="search" placeholder="Buscar"> 
+      </div>
+      <div>
+        <div class="order_button">
+          <button id="btnFirst"><i class="fas fa-sort-amount-down mr-1"></i>$</button>
+          <button id="btnSecond"><i class="fas fa-sort-amount-up mr-1"></i>$</button>
+          <button id="btnThired"><i class="fas fa-sort-amount-down mr-1"></i>Rel.</button>
+        </div>
+        <div class="filter_price"> 
+          <p>Precio</p>
+          <label for="filter_min"></label>
+          <input id="filter_min" value="" type="number" placeholder="Min">
+          <label for="filter_max"></label>
+          <input id="filter_max" value="" type="number" placeholder="Máx">
+          <button id="Filter">Filtrar</button>
+          <button id="Clear">Limpiar</button>
+        </div>
+      </div>
+    </div>
       <div id="products"></div>
     </div>
   </main>

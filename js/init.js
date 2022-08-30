@@ -39,3 +39,7 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+const email_info = localStorage.getItem("email");
+const email_storag = document.getElementById("email_storage")
+email_storag.innerHTML =`${email_info}`

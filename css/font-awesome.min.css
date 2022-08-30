@@ -3376,7 +3376,8 @@ readers do not read off random characters that represent icons */
   content: "\f7c2"; }
 
 .fa-search:before {
-  content: "\f002"; }
+  content: "\f002";
+  }
 
 .fa-search-dollar:before {
   content: "\f688"; }

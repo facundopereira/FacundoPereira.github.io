@@ -13,10 +13,11 @@ console.log(URL_actual);
  }
 
  window.response = (response) => {
-    console.log(response)
+    let email = JSON.parse(window.atob(response.credential.split('.')[1])).email
+    console.log(email)
+    localStorage.setItem("email", email);
     window.location.href = "coverpage.html";
-  }
-
+}
 
 form_element.addEventListener("submit", function(event){
     event.preventDefault();
@@ -39,6 +40,7 @@ form_element.addEventListener("submit", function(event){
         svg_error2.style.visibility="visible";
     }
     else if(email_input.value.length>=10 && password_input.value.length>=8){
+        localStorage.setItem("email" , email_input.value);
         window.location.href = "coverpage.html";
     }
     else if(password_input.value.length<=7){

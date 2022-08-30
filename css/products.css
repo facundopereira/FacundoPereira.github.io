@@ -26,6 +26,8 @@
   
   .container_title{
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   
   .product_description{
@@ -54,5 +56,110 @@
   }
   .product_description p{
     font-size: 13px;
+  }
+}
+/* order button */
+.order_button{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order_button button{
+  height: 40px;
+  width: 60px;
+  padding: 0px;
+  border: 0px;
+  background-color: #f8f9fa;
+}
+.first_button{
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.thired_button{
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.order_button button:focus{
+  border: 2px solid #e9e9ea;
+  
+}
+
+.container_filter{
+  display: flex;
+  justify-content:space-between;
+}
+
+
+/* filter price */
+.filter_price{
+  display: flex;
+  justify-content: end;
+  text-align: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.filter_price input{
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #ced4da
+}
+.filter_price button{
+  height: 40px;
+  width: 70px;
+  border: 0px;
+  margin: 5px 0px 5px 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+.filter_price button:focus{
+  border: 2px solid #e9e9ea;
+}
+
+.filter_price p{
+  margin:  0px;
+  padding-right: 15px;
+}
+
+#filter_min{
+  margin-right: 20px;
+
+}
+/* search */
+.search {
+  display: flex;
+  align-items: flex-end;
+}
+
+.search input{
+  height: 40px;
+  width: 200%;
+  margin-left:-15px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  margin-bottom: 5px;
+  padding: 0px;
+  padding-left: 30px;
+}
+
+.search label {
+  position: relative;
+  translate: 10px -11px;
+}
+
+@media(max-width:500px){
+  .search{
+    position: absolute;
+    width: calc(100% - 200px )
+  }
+  .filter_price p{
+    padding-right: 5px;
+  }
+  .filter_price input{
+    flex:1;
   }
 }
