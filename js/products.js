@@ -112,14 +112,7 @@ btnClear.addEventListener("click", function(){
     show_products(products_original);
 });
 
-function productos() {
-    for (data of products_original){
-        let nombres = data.name.toLowerCase();
-        if(nombres.inexOf(text) !== -1){
 
-        }
-    }
-}
 function search(products) {
     let text = inputSearch.value.toLowerCase();
     /* console.log(text); */

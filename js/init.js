@@ -42,4 +42,8 @@ let getJSONData = function(url){
 
 const email_info = localStorage.getItem("email");
 const email_storag = document.getElementById("email_storage")
-email_storag.innerHTML =`${email_info}`
+email_storag.innerHTML +=`${email_info}`
+
+/*   email_storag.addEventListener("click" ,function(){
+    window.location.href ="index.html"
+  }) */

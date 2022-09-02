@@ -188,3 +188,20 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#sign_out{
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  color: black;
+  padding: 5px 1px;
+}
+
+#sign{
+  position: relative;
+}
+
+#sign:hover > span > a{
+  display: block;
+}
