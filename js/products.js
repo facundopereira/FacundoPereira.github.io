@@ -39,7 +39,7 @@ function show_products(products){
     products_filter = search(products_filter);
     for (data of products_filter){
         contents+= 
-        `<div class="products_container">
+        `<div onclick="setProID(${data.id})" class="products_container">
             <div class="content">
                 <div class="product_image">
                     <img src="${data.image}">
@@ -62,7 +62,7 @@ fetch(PRODUCT_AUTO)
 .then(data => {
     products_original = data.products;
     products = data.products;
-    /* console.log(products_original); */
+    /* console.log(data.id); */
     show_products(products);
     
     let name_category= document.getElementById("description") 
@@ -130,3 +130,9 @@ function search(products) {
 inputSearch.addEventListener("input", function(){
     show_products(products_original);
 })
+
+const productInfo = document.getElementsByClassName ("products_container")
+function setProID(id) {
+    localStorage.setItem("proID", id);
+    window.location.href = "product-info.html"
+}

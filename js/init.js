@@ -41,9 +41,17 @@ let getJSONData = function(url){
 }
 
 const email_info = localStorage.getItem("email");
-const email_storag = document.getElementById("email_storage")
-email_storag.innerHTML +=`${email_info}`
+const email_storag = document.getElementsByClassName("nav-item");
 
-/*   email_storag.addEventListener("click" ,function(){
-    window.location.href ="index.html"
-  }) */
+email_storag[3].innerHTML +=`
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    ${email_info}
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+  </ul>
+</div>
+`

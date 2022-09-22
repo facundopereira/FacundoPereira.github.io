@@ -205,3 +205,12 @@ a.custom-card:hover {
 #sign:hover > span > a{
   display: block;
 }
+
+/*menu*/
+
+.btn-secondary{
+  background-color: #212529;
+  border: none;
+  color: #9b9d9e;
+  padding-left: 0px;
+}

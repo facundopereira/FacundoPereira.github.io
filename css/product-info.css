@@ -1,0 +1,95 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    margin: 0vw 7vw;
+}
+
+#name{
+    align-items: center;
+    justify-content: center;
+}
+
+#name br{
+    justify-content: flex-end;
+}
+
+#name  h2 {
+    padding: 30px 0px;
+}
+
+p{
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+img{
+    border: 2px solid #eff1f3;
+    width: 22%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+#content2{
+    margin: 20vw 7vw 0vw 7vw;
+
+}
+
+#contentComments p{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+#commentsHead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1vw;
+    height: 30px;
+}
+#commentsHead  p {
+    margin-right: 5px;
+}
+
+#commentsMain p{
+    margin: 0px 0px 10px 0px;
+}
+
+#contentComments{
+    border: solid 1px #eff1f3;
+}
+
+#commentsMain p{
+    margin-left: 1vw;
+}
+
+#content2 form{
+    display: flex;
+    flex-direction: column; 
+}
+
+#content2 form textarea{
+    width: 25vw;
+    height: 5vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#content2 form select{
+    width: 8vw;
+    height: 2vw;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#content2 form input{
+    width: 4vw;
+    height: 2vw;
+    background-color: #0d6efd;
+    border-radius: 5px;
+    color:white;
+    border: none;
+}
