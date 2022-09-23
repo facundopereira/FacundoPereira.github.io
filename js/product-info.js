@@ -3,7 +3,7 @@ let URL = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
 let URL_comments = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`
 
 const info_container = document.getElementById("container");
-const content2 = document.getElementById("content2");
+const content3 = document.getElementById("content3");
 const contComments = document.getElementById("comments");
 const btnSean = document.getElementById("send");
 const texterea = document.querySelector("#textarea");
@@ -143,7 +143,7 @@ function show_relatedProducts(){
         <img onclick="setProID(${product_info.relatedProducts[1].id})" src="${product_info.relatedProducts[1].image}">
     </div>
     `
-    content2.innerHTML += content;
+    content3.innerHTML = content;
 }
 
 function setProID(id) {
