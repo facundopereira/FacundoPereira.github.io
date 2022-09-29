@@ -6,6 +6,7 @@ const error_password = document.querySelector(".error_password")
 const svg_error = document.querySelector(".img_svg")
 const svg_error2 = document.querySelector("#img_svg")
 const URL_actual = window.location.hostname;
+localStorage.removeItem("email");
 
 console.log(URL_actual);
  if(URL_actual==="127.0.0.1"){

@@ -22,6 +22,7 @@ fetch(URL)
     product_info = data;
     console.log(product_info);
     show_info_product();
+    show_relatedProducts();
 })
 
 function show_info_product(){
@@ -29,11 +30,9 @@ function show_info_product(){
     content += 
     `
     <div id="content"> 
-        <div id="name">
+        <div id="description">
             <h2>${product_info.name}</h2>
             <hr>
-        </div>
-        <div id="description">
             <p><b>Precio<br></b>
                 ${product_info.currency} ${product_info.cost}
             </p>
@@ -46,9 +45,11 @@ function show_info_product(){
             <p><b>Cantidad vendidos</b><br>
                 ${product_info.soldCount}
                 </p>
+            <div id="button">
+                <button>Agregar al carrito</button>
+            </div>
         </div>
         <div id="images">
-            <p><b>Imagenes Ilustrativas</b><br></p>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -58,16 +59,16 @@ function show_info_product(){
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="${product_info.images[0]}" class="d-block w-100" alt="...">
+                <img src="${product_info.images[0]}" alt="img-product">
               </div>
               <div class="carousel-item">
-                <img src="${product_info.images[1]}" class="d-block w-100" alt="...">
+                <img src="${product_info.images[1]}" alt="img-product">
               </div>
               <div class="carousel-item">
-                <img src="${product_info.images[2]}" class="d-block w-100" alt="...">
+                <img src="${product_info.images[2]}" alt="img-product">
               </div>
               <div class="carousel-item">
-                <img src="${product_info.images[3]}" class="d-block w-100" alt="...">
+                <img src="${product_info.images[3]}" alt="img-product">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -88,8 +89,7 @@ fetch(URL_comments)
 .then(response => response.json())
 .then(data =>{
     comments = data;
-    show_comments()
-    show_relatedProducts()
+    show_comments();
 })
 
 
@@ -136,11 +136,19 @@ function show_comments(){
 function show_relatedProducts(){
     let content = "";
     content += `
-    <div>
+    <div id="related-products">
         <hr>
         <p> Productos Relacionados </p>
-        <img onclick="setProID(${product_info.relatedProducts[0].id})" src="${product_info.relatedProducts[0].image}">
-        <img onclick="setProID(${product_info.relatedProducts[1].id})" src="${product_info.relatedProducts[1].image}">
+        <div id="content-related">
+            <div onclick="setProID(${product_info.relatedProducts[0].id})">
+                <img src="${product_info.relatedProducts[0].image}">
+                <p style="display:inline;">${product_info.relatedProducts[0].name}</p>
+            </div>
+            <div onclick="setProID(${product_info.relatedProducts[1].id})">
+                <img src="${product_info.relatedProducts[1].image}">
+                <p style="display:inline;">${product_info.relatedProducts[1].name}</p>
+            </div>
+        </div>
     </div>
     `
     content3.innerHTML = content;
