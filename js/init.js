@@ -55,3 +55,15 @@ email_storag[3].innerHTML +=`
   </ul>
 </div>
 `
+
+const URL_Product = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+fetch(URL_Product)
+.then(response => response.json())
+.then(data =>{
+  if(cart.length === 0){
+    cart.push(data.articles[0]);
+  } 
+  console.log(cart)
+})

@@ -1,0 +1,55 @@
+.card-header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.card{
+    margin-top: 50px;
+    box-shadow: -2px -1px 12px -1px rgba(0,0,0,0.45);
+    -webkit-box-shadow: -1px -1px 20px -1px rgba(0,0,0,0.45);
+    -moz-box-shadow: -2px -1px 12px -1px rgba(0,0,0,0.45);
+}
+
+#table-responsive{
+    overflow: auto;
+}
+
+.card-header i {
+    font-size: 25px;
+    display: grid;
+    place-content: center;
+}
+
+.card-header h2{
+    margin: 0px 5px;
+}
+
+#table-body img {
+    width: 70px;
+}
+
+#table-body input{
+    margin: auto;
+    width: 70px;
+}
+
+.form-control{
+    width: 300px;
+}
+
+h3{
+    margin-top: 20px;
+}
+
+#shipping{
+    margin-left: 20px;
+    
+    margin-bottom: 20px;
+}
+
+.fas {
+    padding-top: 35%;
+}
+
+

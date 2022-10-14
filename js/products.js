@@ -37,7 +37,7 @@ function show_products(products){
     }
     let products_filter = filter(products);
     products_filter = search(products_filter);
-    for (data of products_filter){
+    for (let data of products_filter){
         contents+= 
         `<div onclick="setProID(${data.id})" class="products_container">
             <div class="content">

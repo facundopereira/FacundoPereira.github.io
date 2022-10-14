@@ -46,7 +46,7 @@ function show_info_product(){
                 ${product_info.soldCount}
                 </p>
             <div id="button">
-                <button>Agregar al carrito</button>
+                <button id="btn" onclick="btn()">Agregar al carrito</button>
             </div>
         </div>
         <div id="images">
@@ -91,6 +91,29 @@ fetch(URL_comments)
     comments = data;
     show_comments();
 })
+
+
+console.log(cart);
+
+let articleId = [];
+
+function btn(){
+    for (let article of cart){
+        articleId.push(String(article.id));
+        }
+    if(!articleId.includes(productID)){
+        let article1 = {
+            id : productID,
+            name : product_info.name,
+            count : "1",
+            unitCost : product_info.cost,
+            currency : product_info.currency,
+            image : product_info.images[0],
+        }
+        cart.push(article1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+}
 
 
 let myComment
