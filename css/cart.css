@@ -11,7 +11,7 @@
     -moz-box-shadow: -2px -1px 12px -1px rgba(0,0,0,0.45);
 }
 
-#table-responsive{
+#header-table{
     overflow: auto;
 }
 
@@ -34,16 +34,12 @@
     width: 70px;
 }
 
-.form-control{
-    width: 300px;
-}
-
 h3{
     margin-top: 20px;
 }
 
 #shipping{
-    margin-left: 20px;
+    /* margin-left: 20px; */
     
     margin-bottom: 20px;
 }
@@ -52,4 +48,6 @@ h3{
     padding-top: 35%;
 }
 
-
+.img{
+  margin-right: 35px;
+}
