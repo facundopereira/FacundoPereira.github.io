@@ -15,8 +15,10 @@ console.log(URL_actual);
 
  window.response = (response) => {
     let email = JSON.parse(window.atob(response.credential.split('.')[1])).email
-    console.log(email)
-    localStorage.setItem("email", email);
+    let image = JSON.parse(window.atob(response.credential.split('.')[1])).picture
+/*     console.log(name)
+ */    localStorage.setItem("email", email);
+    localStorage.setItem("image", image);
     window.location.href = "coverpage.html";
 }
 

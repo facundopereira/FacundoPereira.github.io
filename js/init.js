@@ -50,15 +50,20 @@ email_storag[3].innerHTML +=`
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" href=${localStorage.email === undefined ? "index.html" : "my-profile.html"}>Mi perfil</a></li>
     <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
   </ul>
 </div>
 `
+//linea 53 lo que hice en el href fue usar un ternario para que se fijara si el usuario estaba logueado(condicion: si en el localstorage.email === undefined entonces que lo redirija a index.html para que se logue y si es false que lo redirija a my-profile.html)
 
+
+// en las siguientes linas de codigo lo que hice es para cuando el usuario entra al E-commerce cargue el carrito(si existe) en la variable cart y si no hay que lo cree vacio
 const URL_Product = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+
+//en este fetch lo que hice es cargar en el "cart" el producto precargado solo si el "cart" esta vacio si existe otro cart ya cargado en el localstorage entonces no guarda el producto precargado 
 fetch(URL_Product)
 .then(response => response.json())
 .then(data =>{
