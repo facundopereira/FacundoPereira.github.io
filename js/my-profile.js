@@ -2,7 +2,7 @@ let container = document.getElementsByClassName("container")[1];
 // al cargar la pagina perfil "datosProfile" lo que hace es preguntar si ya hay un "datosProfile" en el localstorage y si hay que lo cargue y sino que deje un array vacio para ser completado
 let datosProfile = JSON.parse(localStorage.getItem("datosProfile")) || {}
 //Función para mostrar el contenido del perfil 
-function content(){
+function content() {
     container.innerHTML = `
     <div class="container mt-4"> 
         <form id="form" action="#" method="get">
@@ -53,8 +53,8 @@ let form = document.getElementById("form")
 let input = document.getElementById("image-profile")
 let image = document.getElementById("img-profile")
 //evento submit que lo que hace es validar los datos si los input requeridos no estan vacios y guarda los datos en el localstorage para poder verse luego de haber salido del perfil
-form.addEventListener("submit", function(e){
-   /*  e.preventDefault() */
+form.addEventListener("submit", function (e) {
+    e.preventDefault()
     let name = document.getElementById("first-name");
     let secondName = document.getElementById("second-name");
     let surname = document.getElementById("first-surname");
@@ -69,23 +69,23 @@ form.addEventListener("submit", function(e){
         phone: phone.value,
         image: imageBase64,
     }
-    if(input.checked === false){
-        image.src=`${localStorage.image}`
+    if (input.checked === false) {
+        image.src = `${localStorage.image}`
     }
     /* console.log(datosProfile) */
-    localStorage.setItem("datosProfile" , JSON.stringify(datosProfile))
-    /* location.reload() */
+    localStorage.setItem("datosProfile", JSON.stringify(datosProfile))
+    location.reload()
 })
 
 let imageBase64 = ""
 
 
 //evento que crea la imagen subida en base64 y la guarda en una variable "imageBase64" para luego ser usada en el evento submit para poder verse 
-input.addEventListener("change", (e) =>{
+input.addEventListener("change", (e) => {
     const reader = new FileReader();
     /* console.log(reader); */
     reader.readAsDataURL(e.target.files[0])
-    reader.onload = e =>{
+    reader.onload = e => {
         e.preventDefault();
         imageBase64 = e.target.result
         /* console.log(imageBase64) */
