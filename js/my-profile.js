@@ -54,7 +54,7 @@ let input = document.getElementById("image-profile")
 let image = document.getElementById("img-profile")
 //evento submit que lo que hace es validar los datos si los input requeridos no estan vacios y guarda los datos en el localstorage para poder verse luego de haber salido del perfil
 form.addEventListener("submit", function(e){
-    e.preventDefault()
+   /*  e.preventDefault() */
     let name = document.getElementById("first-name");
     let secondName = document.getElementById("second-name");
     let surname = document.getElementById("first-surname");
@@ -74,7 +74,7 @@ form.addEventListener("submit", function(e){
     }
     /* console.log(datosProfile) */
     localStorage.setItem("datosProfile" , JSON.stringify(datosProfile))
-    location.reload()
+    /* location.reload() */
 })
 
 let imageBase64 = ""
