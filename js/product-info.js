@@ -78,7 +78,7 @@ function show_info_product() {
             </button>
             </div>
             </div>
-                <button class="btn btn-primary mt-3 pb-2 mb-2 col-11 d-block m-auto" id="btn" onclick="btn()">Agregar al carrito</button>
+                <button class="btn btn-primary mt-4 pb-2 mb-4 col-11 d-block m-auto" id="btn" onclick="btn()">Agregar al carrito</button>
             </div>`;
     info_container.innerHTML = content;
 }
