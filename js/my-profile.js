@@ -8,7 +8,7 @@ function content() {
         <form id="form" action="#" method="get">
             <div class="d-flex justify-content-between">
                 <h1 class="mb-5">Perfil</h1>
-                <img id="img-profile" src=${datosProfile.image === undefined || datosProfile.image === "" ? `${localStorage.image}` : `"${datosProfile.image}"`} class="img-thumbnail" style="width:130px; height:auto;" alt="image-profile">
+                <img id="img-profile" src=${datosProfile.image === undefined || datosProfile.image === "" ? (`${localStorage.image}`, "https://www.softzone.es/app/uploads/2018/04/guest.png") : `"${datosProfile.image}"`} class="img-thumbnail" style="width:130px; height:auto;" alt="image-profile">
             </div>
             <hr>
             <div class="row row-cols-2 mb-5">
