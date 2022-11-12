@@ -10,7 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link href="css/product-info.css" rel="stylesheet">
+  <!-- <link href="css/product-info.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -38,27 +38,27 @@
     </div>
   </nav>
   <main>
-    <div id="container">
+    <div class="container" id="container">
     </div>
-      <div id="content2">
-        <p>Comentarios</p>
+      <div class="container shadow-none p-3 mb-5 bg-light rounded" id="content2">
+        <p class="fs-2">Comentarios</p>
         <div id="comments"></div>
-        <p>Comentar</p>
+        <p class="fs-3">Comentar</p>
         <form action="">
-          <label for="comment">Tu opinion:</label>
-          <textarea id="textarea"></textarea>
-          <label for="star">Tu Puntuacion:</label>
-          <select id="star" name="star">
+          <label class="fs-6" for="comment">Tu opinion:</label>
+          <textarea class="form-control" id="textarea"></textarea>
+          <label class="fs-6" for="star">Tu Puntuacion:</label>
+          <select class="form-select" id="star" name="star">
             <option id="1star" value="1">1</option>
             <option id="2star" value="2">2</option>
             <option id="3star" value="3">3</option>
             <option id="4star" value="4">4</option>
             <option id="5star" value="5">5</option>
           </select>
-          <input id="send" type="submit">
+          <button class="btn btn-primary mt-3 col-12 d-block m-auto" id="send">Enviar</button>
         </form>
       </div>
-      <div id="content3">
+      <div class="container" id="content3">
       </div>
   </main>
   <footer class="text-muted">
