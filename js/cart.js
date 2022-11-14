@@ -1,4 +1,6 @@
+//url del producto precargado 
 const URL = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
+//estas son todas mis variables que fui utilizando en el transcurso del codigo 
 //inputs
 let premium = document.getElementById("flexRadioDefault1");
 let express = document.getElementById("flexRadioDefault2");
@@ -51,7 +53,7 @@ fetch(CART_BUY_URL)
         success = data.msg
         console.log(success)
     })
-
+//esta funcion lo que hace es recorrer el cart y mostrar todos los productos que esten cargados en el cart
 function show_products_cart() {
     let content = "";
     for (article of cart) {
@@ -83,7 +85,7 @@ function show_products_cart() {
     `
     } table.innerHTML = content;
 }
-
+//esta  funcion es para eliminar un producto de mi carrito 
 function delete_product(id) {
     let tr = document.getElementsByClassName(`${id}`)[0];
     tr.innerHTML = "";
@@ -93,7 +95,7 @@ function delete_product(id) {
     calculate();
     shippingCost();
 }
-
+// esta funcion lo que hace es calcular el subtotal dependiendo de la cantidad del articulo, le pase como parametro el id y cost para luego poder utilizarlo dentro, esa funcion se ejecuta en los eventos de los input que estan puesto en linea 
 function subtotal(id, cost) {
     let total = 0;
     let valor1 = document.getElementById(`${id}`);
@@ -101,7 +103,7 @@ function subtotal(id, cost) {
     total = valor1.value * cost;
     content[2].innerHTML = total;
 }
-
+//declaroo unitCost para utilizarlo en la funcion calculate(), lo que hace esta funcion es calcular la suma de todos los subtotales y mostrarlo en pantalla tambien hace la transformacion de moneda con una condicion pregunta a los articulos del carrito si "currency" tiene un valor de "UYU" entonces lo que hace es multiplicarlo por 40 sino lo suma al unitCost, luego de haber sumado todos los subtotales lo muestra el Subtotal de Costos, todo eso lo hace en tiempo real ya que esa funcion tambien es ejecutada en linea en los input con un "onclick" y con "onkeyup"
 let unitCost = 0;
 
 function calculate() {
@@ -117,7 +119,7 @@ function calculate() {
     }
     subtotalContent.innerHTML = `USD ${unitCost}`;
 }
-
+//declaro costshipping para utilizarla en los proximos 3 eventos que son de los input de envio "premium" "express" "standard", lo que hago es guardar en costshipping el calculo del 0.15/0.7/0.5 del unitCost declarado arriba y lo muestra en pantalla de costos envio y utilizo la propiedad Math.round como en la funcion de calculate para redondear el numero y quede entero 
 let costshipping = 0;
 
 premium.addEventListener("click", function () {
@@ -143,7 +145,7 @@ standard.addEventListener("click", function () {
     }
     total.innerHTML = `USD ${costshipping + unitCost}`
 });
-
+// esta funcion lo que hace es calcular el TOTAL corrobora que los input de envio esten checkeados y depende de cual este checkeado es el calculo que hace en principio si ningun campo esta checkeado entonces solo hace la suma del subtotal, esta funcion se ejecuta cuando el usuario clickea en los input de envio y en los input de cantidad de productos
 function shippingCost() {
     if (premium.checked) {
         costshipping = Math.round(unitCost * 0.15);
@@ -164,7 +166,7 @@ function shippingCost() {
     }
     total.innerHTML = `USD ${costshipping + unitCost}`
 }
-
+// este evento submit lo que hace es validar todos los campos, que esten checkeados y que tengan los valores correspondientes, tambien verifica   que ningun producto tenga la cantidad 0 sino no se envia el formulario tambien si se envia los formularios sin llenar los campos saltan sus correspondiente errores en los campos no completados , una vez todo checkeado se envia el formulario aparece la alerta de comprado con existo y se vacian todos los campos y el cart hasta refrezcar la pagina y que aparezca el producto precargado
 form.addEventListener("submit", e => {
     e.preventDefault()
     let value = []
@@ -302,7 +304,7 @@ form.addEventListener("submit", e => {
         setTimeout(vanish, 3000);
     }
 })
-
+//estos 2 proximos eventos "credtCard" y "wireTransfer" lo que hacen es habilitar y deshabilitar el metodo de pago, si el "creditCard" esta checkeado entonces deshabilita los campos de "wireTransfer"
 creditCard.addEventListener("click", function () {
     if (creditCard.checked) {
         pTransfer.innerHTML = `Tarjeta de credito <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -346,7 +348,7 @@ wireTransfer.addEventListener("click", function () {
         inputSecurityCode.disabled = true
     }
 })
-
+//este evento "input" lo que hace es validar en tiempo real los campos checkeados sin tener que esperar para enviar el formulario para saber si estan bien o no 
 form.addEventListener("input", function () {
     if (radio15.checked || radio7.checked || radio5.checked) {
         radio5.classList.remove("is-invalid")

@@ -1,3 +1,4 @@
+//estas son mis URL y variables que trabajare en el recorrido de este codigo 
 let productID = localStorage.getItem("proID")
 let URL = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
 let URL_comments = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`
@@ -15,7 +16,7 @@ let today = new Date();
 let todayDate = today.toLocaleDateString('en-US');
 let hour = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-
+// este es el llamado al producto ingresado 
 fetch(URL)
     .then(response => response.json())
     .then(data => {
@@ -24,7 +25,7 @@ fetch(URL)
         show_info_product();
         show_relatedProducts();
     })
-
+//esta funcion lo que hace es mostrar el producto ingresado en la pantalla 
 function show_info_product() {
     let content = "";
     content +=
@@ -82,7 +83,7 @@ function show_info_product() {
             </div>`;
     info_container.innerHTML = content;
 }
-
+// este es el llamado a los comentarios del producto 
 fetch(URL_comments)
     .then(response => response.json())
     .then(data => {
@@ -92,9 +93,9 @@ fetch(URL_comments)
 
 
 console.log(cart);
-
+//aca declare "articleID" para almacenar todos los id del cart para luegar hacer un include y saber si ya existia ese articulo en el cart y asi no volver a agregarlo
 let articleId = [];
-
+//esta es la funcion que se ejecuta cuando apretas en el boton agregar al carrito, guarda el producto en una array si no existe en el articleID y lo setea al localstorage luego redirige al cart.html
 function btn() {
     for (let article of cart) {
         articleId.push(String(article.id));
@@ -114,7 +115,7 @@ function btn() {
     location.href = "cart.html"
 }
 
-
+// este evento agrega un comentario al producto
 let myComment
 btnSean.addEventListener("click", function (e) {
     e.preventDefault()
@@ -131,7 +132,7 @@ btnSean.addEventListener("click", function (e) {
     show_comments()
 })
 
-
+// esta funcion agrega los comentarios precargados del producto
 function show_comments() {
     let content = "";
     for (data of comments) {
@@ -154,7 +155,7 @@ function show_comments() {
         contComments.innerHTML = content;
     }
 }
-
+// esta funcion muestra los productos relacionado 
 function show_relatedProducts() {
     let content = "";
     content += `
@@ -175,7 +176,7 @@ function show_relatedProducts() {
     `
     content3.innerHTML = content;
 }
-
+// esta funcion es la que se ejecuta cuando se clickea en un producto relacionado y lo redirige al producto 
 function setProID(id) {
     localStorage.setItem("proID", id);
     window.location.href = "product-info.html"
